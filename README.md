@@ -1,101 +1,43 @@
-# Docsy Jekyll Theme
+---
+title: "Welcome to SME GraphQL Federation"
+linkTitle: "Documentation"
+menu:
+main:
+weight: 20
+pre: <i class='fas fa-book'></i>
+---
 
-[![CircleCI](https://circleci.com/gh/vsoch/docsy-jekyll/tree/master.svg?style=svg)](https://circleci.com/gh/vsoch/docsy-jekyll/tree/master)
-<a href="https://jekyll-themes.com/docsy-jekyll/">
-    <img src="https://img.shields.io/badge/featured%20on-JT-red.svg" height="20" alt="Jekyll Themes Shield" >
-</a>
+Welcome to the Docsy theme user guide! This guide shows you how to get started creating technical documentation sites using Docsy, including site customization and how to use Docsy's blocks and templates.
 
-![https://raw.githubusercontent.com/vsoch/docsy-jekyll/master/assets/img/docsy-jekyll.png](https://raw.githubusercontent.com/vsoch/docsy-jekyll/master/assets/img/docsy-jekyll.png)
+## What is SME GraphQL Federation?
 
-This is a [starter template](https://vsoch.github.com/docsy-jekyll/) for a Docsy jekyll theme, based
-on the Beautiful [Docsy](https://github.com/google/docsy) that renders with Hugo. This version is intended for
-native deployment on GitHub pages. The original [Apache License](https://github.com/vsoch/docsy-jekyll/blob/master/LICENSE) is included.
+Docsy is a theme for the [Hugo](https://gohugo.io/) static site generator that's specifically designed for technical
+documentation sets and has a lot of best practices built in. Use Docsy to get a working and reliable documentation
+site up and running fast, and then get back to focusing on great content for your users.
+[Learn more about Docsy](/about).
 
-## Changes
+In addition to the theme itself, we provide an [example site](https://github.com/google/docsy-example) that uses lots of Docsy features and has a useful skeleton site structure (with advice for what to put in it!) for a large technical documentation set. You can copy the entire site and edit it for your own projects, or just explore the site and its source to see what Docsy can do. The site you're currently reading also uses Docsy and is a useful example of a smaller Docsy docset: feel free to copy it or borrow from it if it suits your needs better than the "big" example.
 
-The site is intended for purely documentation, so while the front page banner
-is useful for business or similar, this author (@vsoch) preferred to have
-the main site page go directly to the Documentation view. Posts
-are still provided via a feed.
+Docsy itself does **not** provide:
 
-## Usage
+* **Source hosting and management**: Our theme and site source files live on [GitHub](https://github.com/), which is the simplest approach for most projects. However, you can also keep your project files in [GitLab](https://about.gitlab.com/), [BitBucket](https://bitbucket.org/product), locally, or wherever you like. Be aware that where your source files live may affect the Docsy features you can use (such as letting users file documentation issues) and site deployment options.
+* **Site deployment**: You can find out about deployment options in [Previews and Deployment](./deployment/). This site uses [Netlify](https://www.netlify.com/).
 
-### 1. Get the code
+Docsy also doesn't actually generate your site's HTML files: that's Hugo's job! Hugo takes your Markdown or HTML doc source files and Docsy's theme files and builds them into a static site for deployment. You can find out more about Hugo and how it works in the [Hugo documentation](https://gohugo.io/documentation/).
 
-You can clone the repository right to where you want to host the docs:
+## Is Docsy for me?
 
-```bash
-git clone https://github.com/vsoch/docsy-jekyll.git docs
-cd docs
-```
+Docsy is particularly useful for medium to large technical documentation sets with 20+ pages of docs and/or multiple types of docs and pages: tutorials, reference documentation, blog posts, community pages, and so on.
 
-### 2. Customize
+If you have a smaller project with only a couple of pages of documentation and hence simpler navigation needs, Docsy may be too heavyweight a solution for you. Instead, consider:
 
-To edit configuration values, customize the [_config.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_config.yml).
-To add pages, write them into the [pages](https://github.com/vsoch/docsy-jekyll/blob/master/pages) folder. 
-You define urls based on the `permalink` attribute in your pages,
-and then add them to the navigation by adding to the content of [_data/toc.myl](https://github.com/vsoch/docsy-jekyll/blob/master/_data/toc.yml).
-The top navigation is controlled by [_data/navigation.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_data/navigation.yml)
+* A simpler Hugo or Jekyll theme: find out what's available in GitHub Pages' [built-in Jekyll options](https://pages.github.com/themes/) and the [Hugo theme gallery](https://themes.gohugo.io/).
+* A good README file that tells users what your project does and links to some examples.
 
-### 3. Options
+If you have a very large documentation project, our example site structure may not be sufficient either, though you can still use our theme, possibly with heavier customization.
 
-Most of the configuration values in the [_config.yml](https://github.com/vsoch/docsy-jekyll/blob/master/_config.yml) are self explanatory,
-and for more details, see the [getting started page](https://vsoch.github.io/docsy-jekyll/docs/getting-started)
-rendered on the site.
+If you'd like to use Docsy's layouts but prefer to use Jekyll, [vsoch](https://github.com/vsoch) has created a [Docsy Jekyll port](https://github.com/vsoch/docsy-jekyll) that includes many of Docsy's features (though as this is a separate project it won't be automatically updated along with Docsy).
 
-### 4. Serve
+## Ready to get started?
 
-Depending on how you installed jekyll:
-
-```bash
-jekyll serve
-# or
-bundle exec jekyll serve
-```
-
-**NOTE:** If the above serve command throws an error saying `require': cannot load such file -- webrick (LoadError)` try to run `bundle add webrick` to automatically add the webrick gem to your Gemfile, or manually add `gem "webrick"` line to the Gemfile and then run the serve command again.
-
-
-### 5. Run as a container in dev or prod
-
-#### Software Dependencies
-
-If you want to run docsy jekyll via a container for development (dev) or production (prod) you can use containers. This approach requires installing [docker-ce](https://docs.docker.com/engine/install/ubuntu/) and [docker-compose](https://docs.docker.com/compose/install/). 
-
-#### Customization
-
-Note that the [docker-compose.yml](docker-compose.yml) file is using the [jekyll/jekyll:3.8](https://hub.docker.com/r/jekyll/jekyll/tags) image. If you want to make your build more reproducible, you can specify a particular version for jekyll (tag). Note that at the development time of writing this documentation, the latest was tag 4.0.0,
-and it [had a bug](https://github.com/fastai/fastpages/issues/267#issuecomment-620612896) that prevented the server from deploying.
-
-If you are deploying a container to production, you should remove the line to
-mount the bundles directory to the host in the docker-compose.yml. Change:
-
-```yaml
-    volumes: 
-      - "./:/srv/jekyll"
-      - "./vendor/bundle:/usr/local/bundle"
-      # remove "./vendor/bundle:/usr/local/bundle" volume when deploying in production
-```
-
-to:
-
-```yaml
-    volumes: 
-      - "./:/srv/jekyll"
-```
-
-This additional volume is optimal for development so you can cache the bundle dependencies,
-but should be removed for production. 
-
-#### Start Container
-
-Once your docker-compose to download the base container and bring up the server:
-
-```bash
-docker-compose up -d
-```
-
-You can then open your browser to [http://localhost:4000](http://localhost:4000)
-to see the server running.
-
-> Node : changes `baseurl: ""` in _config.yml  when you are running in local and prod according to the requirement.
+Find out how to build and serve your first site in [Getting Started](./getting-started/). Or visit the [example site](https://example.docsy.dev) and [its repo](https://github.com/google/docsy-example) and start exploring!
