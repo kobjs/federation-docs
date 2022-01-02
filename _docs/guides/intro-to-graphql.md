@@ -116,12 +116,8 @@ GraphQL is [introspective](https://graphql.github.io/learn/introspection/). This
   $ curl -H "Authorization: bearer <em>token</em>" {\% data variables.product.graphql_url_pre \%}
   ```
 
-  {% note %}
-
   **Note**: If you get the response `"message": "Bad credentials"` or `401 Unauthorized`, check that you are using a 
   valid token. For more information, see "Creating a Personal Access Token"
-
-  {% endnote %}
 
   The results are in JSON, so we recommend pretty-printing them for easier reading and searching. You can use a command-line tool like [jq](https://stedolan.github.io/jq/) or pipe the results into `python -m json.tool` for this purpose.
 
@@ -132,11 +128,8 @@ GraphQL is [introspective](https://graphql.github.io/learn/introspection/). This
   {\% data variables.product.graphql_url_pre \%}
   ```
 
-  {% note %}
-
   **Note**: The introspection query is probably the only `GET` request you'll run in GraphQL. If you're passing a body, the GraphQL request method is `POST`, whether it's a query or a mutation.
 
-  {% endnote %}
 
   For more information about performing queries, see "Forming calls with GraphQL"
 
