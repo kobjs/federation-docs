@@ -1,8 +1,8 @@
 ---
 title: Connections and Edges Design Pattern
 tags:
-- graphql
-  description: Defines the Connections and Edges design pattern, and provides "how to" guides and examples
+  - graphql
+description: Defines the Connections and Edges design pattern
 ---
 
 # Using Connections and Edges
