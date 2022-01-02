@@ -52,8 +52,8 @@ The SME Federation was conceived as a solution to the following design principle
 
 ## Features
 
-What are these features? You should see the {% include doc.html name="Getting Started" path="getting-started" %}
-guide for a complete summary. Briefly:
+Refer to the {% include doc.html name="Intro to GraphQL" path="intro-to-graphql" %} guide for a complete 
+summary. Briefly:
 
  - *Single, Unified Data Graph for All SME Applications* - Application clients can access data from 
    *multiple*  backend-end services in a **single** graphql query.
@@ -69,5 +69,4 @@ guide for a complete summary. Briefly:
    and best practices.
    
 
-For features, getting started with development, see the {% include doc.html name="Getting Started" path="getting-started" %} page. Would you like to request a feature or contribute?
-[Open an issue]({{ site.repo }}/issues)
+Would you like to request a feature or contribute? [Open an issue]({{ site.repo }}/issues)

@@ -10,6 +10,11 @@
           url: "docs/getting-started#development"
         - title: Customization
           url: "docs/getting-started#customization"
+    - title: Guides
+      url: "docs/guides/intro-to-graphql"
+      children:
+        - title: Connections and Edges
+          url: "docs/guides/connections-edges-pattern"
     - title: "About"
       url: "about"
     - title: "News"
