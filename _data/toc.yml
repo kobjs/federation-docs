@@ -13,6 +13,8 @@
     - title: Guides
       url: "docs/guides/intro-to-graphql"
       children:
+        - title: Forming GraphQL Requests
+          url: "docs/guides/forming-calls-with-graphql"
         - title: Connections and Edges
           url: "docs/guides/connections-edges-pattern"
     - title: "About"
